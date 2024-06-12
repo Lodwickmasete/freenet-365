@@ -91,4 +91,4 @@ btn.onclick = function() {
   
 }
 
-home.click(); //open home by default
+//home.click(); //open home by default
