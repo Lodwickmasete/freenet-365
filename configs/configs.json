@@ -5,7 +5,7 @@ var jsonData = {
             "name": "Ha Tunnel",
             "files": [
                 {
-                    "name": "🤳THE CRONIC MTN🤳",
+                    "name": "🤳THE CRONIC MTN🤳.hat",
                     "limit": "100 mb",
                     "expiry_date": "2024-12-01",
                     "network": "MTN",
@@ -37,10 +37,18 @@ var jsonData = {
                "expiry_date": "life-time",
                "network": "MTN",
                "filename": "ᴍᴛɴ ʙᴇᴛᴛɪɴɢ¶ ᴠᴘs ᴏᴜᴛʟᴀᴡᴢ.hc"
+           },
+           {
+               "name": "🤡MTNSA-120mbs stable🇿🇦.hc",
+               "limit": "120 mb",
+               "expiry_date": "2024-06-23",
+               "network": "MTN",
+               "filename": "🤡MTNSA-120mbs stable🇿🇦.hc"
            }
             ]
         }
     ]
 };
-// Simulating fetching ads from an external source
-const ads = [ { id: 8709, text: 'advertise <a href="mailto:anonkeysolutions@gmail.com">here</a>' }];
+
+
+const ads = [ { id: 1, text: 'advertise <a href="mailto:anonkeysolutions@gmail.com">here</a>' }];
