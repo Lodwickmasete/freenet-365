@@ -5,35 +5,42 @@ var jsonData = {
             "name": "Ha Tunnel",
             "files": [
                 {
-                    "name": "anony.hat",
-                    "description": "Description for Vodacom File 1.",
-                    "expiry_date": "2023-07-01",
-                    "network": "Vodacom",
-                    "filename": "anony.hat"
+                    "name": "🤳THE CRONIC MTN🤳",
+                    "limit": "100 mb",
+                    "expiry_date": "2024-12-01",
+                    "network": "MTN",
+                    "filename": "🤳THE CRONIC MTN🤳.hat"
                 },
                 {
-                    "name": "Ha Tunnel MTN File 1",
-                    "description": "Description for MTN File 1.",
-                    "expiry_date": "2024-06-30",
+                    "name": "MTN South Africa🇿🇦 Echoeyes.hat",
+                    "limit": "100 mb",
+                    "expiry_date": "life-time",
                     "network": "MTN",
-                    "filename": "ha_tunnel_mtn1.ovpn"
+                    "filename": "MTN South Africa🇿🇦 Echoeyes.hat"
+                },
+                {
+                    "name": "[🇿🇦][ZAF]MTNSA📁 🔻100MB 🇺 🇰  🇬🇧 👨🏾‍💻𝘿𝙟𝙅𝙤𝙚𝘿𝙆𝙤𝙩𝙖𝙎𝘼👨🏾‍💻.hat",
+                    "limit": "100 mb",
+                    "expiry_date": "life-time",
+                    "network": "MTN",
+                    "filename": "[🇿🇦][ZAF]MTNSA📁 🔻100MB 🇺 🇰  🇬🇧 👨🏾‍💻𝘿𝙟𝙅𝙤𝙚𝘿𝙆𝙤𝙩𝙖𝙎𝘼👨🏾‍💻.hat"
                 }
-                
-
             ]
         },
         {
             "name": "HTTP Custom",
             "files": [
 
-                {
-                    "name": "HTTP Custom Vodacom File 1",
-                    "description": "Description for Vodacom File 1.",
-                    "expiry_date": "2024-07-02",
-                    "network": "Vodacom",
-                    "filename": "http_custom_vodacom1.ovpn"
-                }
+           {
+               "name": "ᴍᴛɴ ʙᴇᴛᴛɪɴɢ¶ ᴠᴘs ᴏᴜᴛʟᴀᴡᴢ.hc",
+               "limit": "100 mb",
+               "expiry_date": "life-time",
+               "network": "MTN",
+               "filename": "ᴍᴛɴ ʙᴇᴛᴛɪɴɢ¶ ᴠᴘs ᴏᴜᴛʟᴀᴡᴢ.hc"
+           }
             ]
         }
     ]
 };
+// Simulating fetching ads from an external source
+const ads = [ { id: 8709, text: 'advertise <a href="mailto:anonkeysolutions@gmail.com">here</a>' }];
