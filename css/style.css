@@ -8,7 +8,67 @@ body {
     overflow: hidden;
 }  
 
+a {
+  color: #000;
+}
 
+/* header */
+
+.header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  top:0px;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #f4f4f4;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
 
         /*hamburger styeles*/
         .header-btn {
@@ -25,7 +85,7 @@ body {
         border-radius: 5px; /* Rounded corners */
         display: flex;
         align-items: center;
-        gap: 10px; /* Space between icon and text */
+
         }
         
         
@@ -64,11 +124,40 @@ body {
          display: flex;
          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
          border-radius: 4px; /* Rounded corners */
-         margin-top: 60px;
+         margin-top:60px;/*2 times the hamburger 2×60px */
          border: 1px solid #e0e0e0; /* Lighter border color */
          height: calc(100vh - 80px); /* Adjust based on the header height */
          overflow-y: auto; /* Enable vertical scrolling */
          }
+         
+         .ads{
+         position: absolute;
+         border-radius: 0px 0px 6px 6px;
+         right:0;
+         margin-right:12px;
+         background: white;
+         line-height: 35px;
+         text-align: center;
+         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+         transition: 10s ease;
+         /*pointer-events: none;*/
+         }
+         
+         
+         
+         #closead{
+         margin:3px;
+         }
+         
+         .ads.hidead{
+         opacity:0;
+         
+         transition: all 1.03s ;
+         pointer-events: none;
+         
+         }
+         
+         
 #files-auth{
     width: 100%; /* Adjusted width */
 }
@@ -200,20 +289,15 @@ h1 {
 
 /*Side Bar Styles*/
 .sidebar{
-  top: 0;
   display:flex;
   left: 0;
   height: 100%;
   width: 10%;
-    background-color: #f1f1f1;
-
-  z-index: 99;
+  background-color: #f1f1f1;
+  z-index: 0;
   transition: all 0.5s ease;
 }
 
-.sidebar ul{
-  margin-top: 20px;
-}
 .sidebar ul li{
   position: relative;
   height: 50px;
@@ -281,4 +365,5 @@ display:none;
  display: none;
  width:0px;
  }
+ .hidden{ display: none;}
 /*Side Bar Styles END*/

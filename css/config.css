@@ -1,0 +1,21 @@
+.icon-container {
+    background-color: #25d366;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-icon {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+.download-icon:hover {
+    width: 24px;
+    height: 24px;
+    fill: black;
+}
