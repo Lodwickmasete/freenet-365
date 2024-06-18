@@ -7,6 +7,97 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/theme.css">
     <link rel="stylesheet" href="./css/config.css">
+
+    <style>
+        .homepage {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.8);
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .box:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.05);
+        }
+
+        .box:nth-of-type(1) {
+            border-left: 5px solid #007BFF;
+        }
+
+        .box:nth-of-type(2) {
+            border-left: 5px solid #28A745;
+        }
+
+        .box:nth-of-type(3) {
+            border-left: 5px solid #FFC107;
+        }
+
+        .box:nth-of-type(4) {
+            border-left: 5px solid #DC3545;
+        }
+    </style>
+    <style>
+        .about-us {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+    
+        .about-us p {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+    
+        .about-us p:hover {
+            background: rgba(255, 255, 255, 1);
+            color: #000;
+        }
+    
+        .about-us p:first-of-its-kind {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    
+        .about-us p:nth-of-type(2) {
+            font-size: 1.1em;
+            border-left: 5px solid #007BFF;
+            padding-left: 10px;
+        }
+    
+        .about-us p:nth-of-type(3) {
+            font-size: 1em;
+            border-left: 5px solid #28A745;
+            padding-left: 10px;
+        }
+    
+        .about-us p:last-of-type {
+            font-size: 1em;
+            border-left: 5px solid #FFC107;
+            padding-left: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -86,7 +177,7 @@
 
     <div class="network-tabs">
         <button class="networklinks" onclick="openNetwork(event, 'All')" id="defaultNetworkOpen">All</button>
-        <button class="networklinks" onclick="openNetwork(event, 'Vodacom')">Vodacom</button>
+        <button class="networklinks" onclick="openNetwork(event, 'VODACOM')">VODACOM</button>
         <button class="networklinks" onclick="openNetwork(event, 'MTN')">MTN</button>
     </div>
     
@@ -96,11 +187,17 @@
     </div>
     
      <div class="hidden" id="home">
-     <h3>Updates</h3>
-<li>Our files are verified before uploaded</li>
-<li>Real-time file expiry warning</li>
-<li>Ad free (No ads pop up)</li>
-<li>SAFE & SECURE FILE DOWNLOADS</li>
+
+<div class="homepage">
+    <div class="box" >
+        <p>Explore our wide range of VPN files and find the perfect match for your needs. Secure your online presence today!</p>
+    </div>
+    <div class="box">
+        <p>Join our community and stay updated with the latest in VPN technology. Contribute, share feedback, and learn.</p>
+
+</div>
+
+</div>
      </div>
      
     <div class="hidden" id="settings">
@@ -118,6 +215,17 @@
    </center>
 </div>
 <div id="about" class="hidden">
+
+<div class="about-us">
+    <p>Welcome to <b>Freenet-365</b>, your ultimate destination for VPN files.  we specialize in hosting a comprehensive collection of VPN files, curated to provide users with a seamless experience in securing their online activities. Our platform is designed for both beginners and advanced users seeking reliable VPN configurations and setups without the hassle of searching multiple sources.</p>
+    
+    <p>Founded with a vision to simplify VPN accessibility,  serves as a trusted repository where users can find and download a diverse range of VPN files for various platforms and devices. Whether you're looking to enhance privacy, bypass geo-restrictions, or secure your data on public networks, our extensive library caters to diverse needs and preferences.</p>
+    
+    <p>At <b>Freenet-365</b>,, we pride ourselves on offering not just a repository, but a community-driven platform where users can contribute, share feedback, and stay updated with the latest advancements in VPN technology. Our commitment to quality ensures that each file hosted undergoes rigorous testing and verification, guaranteeing reliability and performance.</p>
+    
+    <p>Join us <b onclick="handleNavClick('configs')"><u>Freenet-365</u></b>, and empower yourself with the tools needed to safeguard your digital footprint. Explore our collection today and experience the freedom and security that VPN technology can offer. Whether you're a casual user or a tech enthusiast, <b>Freenet-365</b> is your go-to source for all things VPN.</p>
+</div>
+
 <b>feel free to reach out</b>
 
 <a href="mailto:anonkeysolutions@gmail.com">here</a>
@@ -136,6 +244,7 @@
 <script src="./js/api.js"></script>
 <script src="./js/theme.js"></script>
 <script type="text/javascript">
+
 // Function to get ads from JSON (simulated here as a local object)
 function getAds() {
     return ads;
@@ -146,7 +255,6 @@ function loadAds() {
 
     const closedAds = JSON.parse(localStorage.getItem('closedAds')) || [];
     const availableAds = getAds().filter(ad => !closedAds.includes(ad.id));
-    
     if (availableAds.length === 0) {
         adsDiv.innerHTML = '';
         return;
@@ -185,5 +293,6 @@ if(adsDiv.classList.contains("hidead")){
 
 // Load ads on page load
 document.addEventListener('DOMContentLoaded', loadAds);
+//JSON.parse(localStorage.removeItem('closedAds'));
 </script>
 </html>

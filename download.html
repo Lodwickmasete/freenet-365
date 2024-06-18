@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freenet-365 | Download Selected Files</title>
+<style type="text/css">
+    /* style.css */
+
+    /* Body styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 20px;
+    }
+
+    /* Header styles */
+    h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* File list container */
+    #fileList {
+        max-width: 600px;
+        margin: 0 auto 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* File item styles */
+    #fileList div {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    #fileList div:last-child {
+        border-bottom: none;
+    }
+
+    #fileList label {
+        margin-left: 10px;
+        color: #555;
+    }
+
+    /* Checkbox styles */
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Button styles */
+    button {
+        display: block;
+        width: 200px;
+        margin: 0 auto;
+        padding: 10px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    button:focus {
+        outline: none;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="./js/jszip.min.js"></script>
+    <script src="./js/filesaver.min.js"></script>
+    <script src="./js/jszip-utils.min.js"></script>
+    <script src="./configs/configs.json"></script>
+</head>
+<body>
+    <h1>Select Files to Download</h1>
+    <div id="fileList"></div>
+    <button id="downloadZip">Download Zip</button>
+
+    <script>
+        // When the page loads, display the file names with checkboxes
+        window.onload = function() {
+            var fileList = document.getElementById('fileList');
+            
+            jsonData.tabs.forEach(function(tab) {
+                tab.files.forEach(function(file, index) {
+                    var checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.id = 'file_' + index;
+                    checkbox.value = file.filename;
+         //           checkbox.checked = true;
+                    
+                    var label = document.createElement('label');
+                    label.htmlFor = 'file_' + index;
+                    label.appendChild(document.createTextNode(file.name));
+                    
+                    var div = document.createElement('div');
+                    div.appendChild(checkbox);
+                    div.appendChild(label);
+                    
+                    fileList.appendChild(div);
+                });
+            });
+        };
+        
+        // When the download button is clicked, download the selected files into a zip archive
+        document.getElementById('downloadZip').addEventListener('click', function () {
+            var zip = new JSZip();
+            
+            var promises = []; // Array to hold promises for file content fetching
+            
+            jsonData.tabs.forEach(function(tab) {
+                var folderName = tab.name === 'Ha Tunnel' ? 'Ha Tunnel' : 'HTTP Custom';
+                tab.files.forEach(function(file, index) {
+                    var checkbox = document.getElementById('file_' + index);
+                    if (checkbox && checkbox.checked) {
+                        // Fetch file content asynchronously
+                        var promise = fetchFileContent(file)
+                            .then(function(base64Content) {
+                                var filePath = 'configs/' + folderName + '/' + file.filename;
+                                zip.file(filePath, base64Content, { base64: true });
+                            });
+                        promises.push(promise);
+                    }
+                });
+            });
+            
+            // Wait for all promises to resolve and then generate the zip file
+            Promise.all(promises)
+                .then(function() {
+                    // Generate the zip file
+                    return zip.generateAsync({ type: "blob" });
+                })
+                .then(function(content) {
+                    // Save the zip file
+                    saveAs(content, "Freenet-365 (.hc) & (.hat) files.zip");
+                })
+                .catch(function(err) {
+                    console.error('Error generating zip:', err);
+                });
+        });
+
+        // Function to fetch file content in base64 format (replace with your actual method)
+        function fetchFileContent(file) {
+            return new Promise(function(resolve, reject) {
+                // Example: Fetching file content via AJAX
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'configs/' + file.filename, true);
+                xhr.responseType = 'blob';
+                
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        var reader = new FileReader();
+                        reader.onload = function(event) {
+                            var base64Content = event.target.result.split(',')[1];
+                            resolve(base64Content);
+                        };
+                        reader.readAsDataURL(xhr.response);
+                    } else {
+                        reject(new Error('Failed to fetch file ' + file.filename));
+                        alert('error fetching file')
+                    }
+                };
+                
+                xhr.onerror = function() {
+                    reject(new Error('Network error occurred while fetching ' + file.filename));
+                };
+                
+                xhr.send();
+            });
+        }
+    </script>
+</body>
+</html>
