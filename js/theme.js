@@ -45,28 +45,42 @@ else{
 
 //div showing/hiding
 
-function showDivByHash() {
-    // Hide all divs
-    const divs = document.querySelectorAll('#files-auth > div');
-    divs.forEach(div => div.style.display = 'none');
-    
-    // Get the current hash
-    const hash = window.location.hash.substring(1);
-    
-    // If there's a hash, display the corresponding div
-    if (hash) {
-        const activeDiv = document.getElementById(hash);
-        if (activeDiv) {
-            activeDiv.style.display = 'block';
-        }
-    }        
+function handleNavClick(hash) {
+  const currentHash = window.location.hash.substring(1);
+
+  // Do nothing if the hash is the same as the current hash
+  if (hash === currentHash) {
+    return;
+  }
+
+  // Hide all divs
+  const divs = document.querySelectorAll('#files-auth > div');
+  divs.forEach(div => div.style.display = 'none');
+
+  // Show the selected div
+  const activeDiv = document.getElementById(hash);
+  if (activeDiv) {
+    activeDiv.style.display = 'block';
+  }
+
+  // Update the hash without reloading the page
+  window.history.pushState(null, null, `#${hash}`);
 }
 
-// Call the function when the page loads
-window.addEventListener('load', showDivByHash);
+// Call the function on page load to display the correct div
+window.addEventListener('load', () => {
+  const hash = window.location.hash.substring(1);
+  if (hash) {
+    handleNavClick(hash);
+  }
+});
 
-// Call the function when the hash changes
-window.addEventListener('hashchange', showDivByHash);
+// Handle back/forward navigation
+window.addEventListener('popstate', () => {
+  const hash = window.location.hash.substring(1);
+  handleNavClick(hash);
+});
+
 
 
 let btn = document.querySelector("#btn");
@@ -85,7 +99,6 @@ btn.onclick = function() {
     sidebar.classList.replace("show" , "hide");
 
   }
-  
 
   hamburger.classList.toggle('cross');
   

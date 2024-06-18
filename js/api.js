@@ -1,7 +1,4 @@
 function download(filename) {
-
-
-
     // Create a temporary anchor element
     var link = document.createElement('a');
     link.href = './configs/' + filename;
