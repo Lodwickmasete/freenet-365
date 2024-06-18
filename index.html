@@ -3,163 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freenet 365 VPN Config Files</title>
+    <title>Freenet 365 VPN Config Files | .hc | .hat | happy Surfing</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/theme.css">
+    <link rel="stylesheet" href="./css/config.css">
 </head>
 <body>
+
+<div class="ads show" id="ads">
+
+</div>
+<header class="header">
 <button id="btn" class="header-btn">
 <div class="hamburger" id="hamburger" hidden>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
 </div>
 
 </button>
-
-
-
-
-<div class="ads show" id="ads">
-<div id="ad">
-Whatsapp me for aviator predictor
-<button id="closead">&times;</button>
-</div>
-
-</div>
-
-
-<style type="text/css">
-.ads{
-position: absolute;
-border-radius: 0px 0px 6px 6px;
-right:0;
-background: white;
-line-height: 35px;
-text-align: center;
-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-transition: 10s ease;
-/*pointer-events: none;*/
-}
-
-
-
-#closead{
-margin:3px;
-}
-
-.ads.hidead{
-opacity:0;
-
-transition: all 1.03s ;
-pointer-events: none;
-
-}
-
-
-</style>
-
-
-
-
-<style type="text/css">
-
-
-.icon-container {
-    background-color: #25d366;
-    border-radius: 50%;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.download-icon {
-    width: 24px;
-    height: 24px;
-    fill: white;
-}
-
-.download-icon:hover {
-    width: 24px;
-    height: 24px;
-    fill: black;
-}
-</style>
-
-
-
-
-<script type="text/javascript">
-
-let closead = document.getElementById('closead');
-let adsDiv = document.getElementById('ads');
-
-closead.onclick = function() {   
-
-
-if(adsDiv.classList.contains("hidead")){
- adsDiv.classList.replace("hidead" , "show");
- adsDiv.style.display="block";
-
-}else{
-  adsDiv.classList.replace("show" , "hidead");
-}
-
-  }
-//setTimeout(() => {closead.click();  }, 2000);
-
-</script>
-<div id="container" class="container">
-<div class="sidebar hide">
-
-  <ul class="nav_list">
-<a href="#home" id="homepage" hidden></a>
-<li>
-  <a href="#home">
-    <i class='bx bx-file' ></i>
-    <span  class="links_name">HOME</span>
-  </a>
-  <span class="tooltip">Home</span>
-</li>
-    <li>
-      <a href="#configs">
-        <i class='bx bx-file' ></i>
-        <span  class="links_name">CONFIGS</span>
-      </a>
-      <span class="tooltip">Configs</span>
-    </li>
-  <li>
-  <a href="#settings">
-    <i class='bx bx-setting' ></i>
-    <span  class="links_name">Settings</span>
-  </a>
-  <span class="tooltip">Settings</span>
-  </li>
-    
-    <li>
-          <a href="#about">
-    <i class='bx bx-profile'></i>
-    <span class="links_name">ABOUT US</span>
-          </a>
-        
-        <span class="tooltip" >See More About Us</span>
-        </li>
-        
-
-    <span class="links_name tooltip" >version 1.0</span>
-
-
-
+  <a class="logo">Freenet-365</a>
+  <ul class="menu">
+    <li><a href="https://lodwickmasete.github.io">Developer</a></li>
   </ul>
 
+</header>
+
+<div id="container" class="container">
+
+<div class="sidebar hide">
+
+<ul class="nav_list">
+  <a href="#home" id="homepage" hidden></a>
+  <li onclick="handleNavClick('home')">
+    <a>
+      <i class='bx bx-file'></i>
+      <span class="links_name">HOME</span>
+    </a>
+    <span class="tooltip">Home</span>
+  </li>
+
+  <li onclick="handleNavClick('configs')">
+    <a>
+      <i class='bx bx-file'></i>
+      <span class="links_name">CONFIGS</span>
+    </a>
+    <span class="tooltip">Configs</span>
+  </li>
+
+  <li onclick="handleNavClick('settings')">
+    <a>
+      <i class='bx bx-setting'></i>
+      <span class="links_name">Settings</span>
+    </a>
+    <span class="tooltip">Settings</span>
+  </li>
+
+  <li onclick="handleNavClick('about')">
+    <a>
+      <i class='bx bx-profile'></i>
+      <span class="links_name">ABOUT US</span>
+    </a>
+    <span class="tooltip">See More About Us</span>
+  </li>
+
+  <span class="links_name tooltip">version 1.0</span>
+</ul>
+
 </div>
 
-<div id="files-auth">
+<div id="files-auth" >
   <div id="configs">
     <div class="tabs">
-        <button class="tablinks" onclick="openTab(event, 'Ha Tunnel')" id="defaultOpen">Ha Tunnel</button>
+        <button class="tablinks" onclick="openTab(event, 'All-VPNS')" id="defaultOpen">All</button>
+        <button class="tablinks" onclick="openTab(event, 'Ha Tunnel')" >Ha Tunnel</button>
         <button class="tablinks" onclick="openTab(event, 'HTTP Custom')">HTTP Custom</button>
     </div>
 
@@ -178,11 +95,15 @@ if(adsDiv.classList.contains("hidead")){
     </div>
     </div>
     
-     <div id="home">
-
+     <div class="hidden" id="home">
+     <h3>Updates</h3>
+<li>Our files are verified before uploaded</li>
+<li>Real-time file expiry warning</li>
+<li>Ad free (No ads pop up)</li>
+<li>SAFE & SECURE FILE DOWNLOADS</li>
      </div>
      
-    <div id="settings">
+    <div class="hidden" id="settings">
 
   <center>
      <center >
@@ -196,21 +117,73 @@ if(adsDiv.classList.contains("hidead")){
       <button type="button" class="cl" onclick="save()"><big>Save Color</big></button>       
    </center>
 </div>
+<div id="about" class="hidden">
+<b>feel free to reach out</b>
 
-<style type="text/css">
-
-
-</style>
-    </div>
-    <div id="about">
+<a href="mailto:anonkeysolutions@gmail.com">here</a>
+</div>
 
     </div>
-    
+
   </div>
+
+
+</div>
 
 
 <script src="./configs/configs.json"></script>
 <script src="./js/backend.js"></script>
 <script src="./js/api.js"></script>
 <script src="./js/theme.js"></script>
+<script type="text/javascript">
+// Function to get ads from JSON (simulated here as a local object)
+function getAds() {
+    return ads;
+}
+    const adsDiv = document.getElementById('ads');
+// Function to load ads and display one based on criteria
+function loadAds() {
+
+    const closedAds = JSON.parse(localStorage.getItem('closedAds')) || [];
+    const availableAds = getAds().filter(ad => !closedAds.includes(ad.id));
+    
+    if (availableAds.length === 0) {
+        adsDiv.innerHTML = '';
+        return;
+    }
+
+    const adToShow = availableAds.reduce((prev, current) => (prev.id > current.id) ? prev : current);
+    adsDiv.innerHTML = `
+        <div id="ad_id-${adToShow.id}">
+            ${adToShow.text} <button class="closead" data-id="${adToShow.id}">&times;</button>
+        </div>
+    `;
+    adsDiv.style.display = 'block';
+
+    document.querySelector('.closead').onclick = function() {
+        closeAd(adToShow.id);
+    };
+}
+
+// Function to close an ad and store its ID in localStorage
+function closeAd(adId) {
+    let closedAds = JSON.parse(localStorage.getItem('closedAds')) || [];
+    if (!closedAds.includes(adId)) {
+        closedAds.push(adId);
+        localStorage.setItem('closedAds', JSON.stringify(closedAds));
+    }
+//    document.getElementById('ads').style.display = 'none';
+
+if(adsDiv.classList.contains("hidead")){
+ adsDiv.classList.replace("hidead" , "show");
+ adsDiv.style.display="block";
+
+}else{
+  adsDiv.classList.replace("show" , "hidead");
+}
+}
+
+// Load ads on page load
+document.addEventListener('DOMContentLoaded', loadAds);
+</script>
 </html>
