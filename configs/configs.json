@@ -5,10 +5,32 @@ var jsonData = {
         {
             "name": "HTTP Custom",
             "files": [
+			 {
+			 "name": "🔰THE CRONIC MTN-VODACOM🔰.hc",
+ 			 "limit": "1 gb",
+			 "expiry_date": "2024-07-01",
+ 			"network": "VODACOM",
+ 			"filename": "🔰THE CRONIC MTN-VODACOM🔰.hc",
+			 },
+			{
+			"name": "🔰THE CRONIC MTN-VODA_TELKOM🔰.hc",
+			"limit": "1 gb",
+			 "expiry_date": "2024-07-01",
+			"network": "VODACOM",
+			"filename": "🔰THE CRONIC MTN-VODA_TELKOM🔰.hc",
+			},
+                        {
+           "name": "Nagempela MTN+VODACOM🇲🇽📞.hc",
+           "limit": "1 gb",
+			 "expiry_date": "2024-07-06",
+           "network": "VODACOM",
+           "filename": "nagempela MTN&VODACOM.hc",
+            },
+
             {
             "name": "🔥THE CRONIC VODACOM=MTN1G🔥.hc",
             "limit": "1 gb",
-            "expiry_date": "unconfirmed",
+			 "expiry_date": "2024-08-11",
             "network": "VODACOM",
             "filename": "🔥THE CRONIC VODACOM=MTN1G🔥.hc",
             },
@@ -32,11 +54,28 @@ var jsonData = {
         {
             "name": "Ha Tunnel",
             "files": [
+            {
+            "name": "POK MTN & VODA2K24 UNLIMITED.hat",
+            "limit": "1 gb",
+            "expiry_date": "unconfirmed",
+            "network": "VODACOM",
+            "filename": "POK MTN & VODA2K24 UNLIMITED.hat",
+            },
+            {
+            "name": "vodacom unlimited.hat",
+            "limit": "1 gb",
+			 "expiry_date": "2024-08-18",
+            "network": "VODACOM",
+            "filename": "vodacom unlimited.hat",
+            },
+            
+
                 {
                     "name": "🤳THE CRONIC MTN🤳.hat",
                     "limit": "100 mb",
-                    "expiry_date": "2024-12-01",
+                    "expiry_date": "life-time",
                     "network": "MTN",
+                    "trending":"1",
                     "filename": "🤳THE CRONIC MTN🤳.hat"
                 },
                 {
@@ -55,6 +94,101 @@ var jsonData = {
                     "filename": "djoedkotasa.hat"
                 }
             ]
+        },
+        {
+            "name": "NPV Tunnel",
+            "files": [
+            
+
+                {
+                    "name": "MTN&VODACOM.npv4",
+                    "limit": "100 mb",
+         			 "expiry_date": "2024-07-01",
+                    "network": "VODACOM",
+                    "filename": "MTN&VODACOM.npv4"
+                },
+                {
+                    "name": "Vodacom and Telkom.npv4",
+                    "limit": "100 mb",
+	        		 "expiry_date": "2024-09-01",
+                    "network": "TELKOM",
+                    "filename": "Vodacom and Telkom.npv4"
+                },
+                {
+                    "name": "Vodacom unlimited🇿🇦.npv4",
+                    "limit": "100 mb",
+			 "expiry_date": "2024-06-25",
+                    "network": "TELKOM",
+                    "filename": "Vodacom unlimited.npv4",
+                },
+                {
+                    "name": "VODACOM 🇿🇦 LORD OG 2.0 (1).npv4",
+                    "limit": "1024 mb",
+                    "expiry_date": "2024-08-23",
+                    "network": "VODACOM",
+                    "filename": "VODACOM-LORD-OG-2.0.npv4",
+                },
+                {
+                    "name": "voda_unlimited_+_mtn_1gb.npv4",
+                    "limit": "1024 mb",
+                    "expiry_date": "2024-06-29",
+                    "network": "MTN",
+                    "filename": "voda_unlimited_&_mtn_1gb.npv4",
+                },
+                {
+                    "name": "Vodacom unlimited.npv4",
+                    "limit": "1024 mb",
+                    "expiry_date": "2024-07-15",
+                    "network": "VODACOM",
+                    "filename": "Vodacom unlimited.npv4",
+                },
+                {
+                    "name": "🌎THE CRONIC MTN1G VODACOM 🌏.npv4",
+                    "limit": "1024 mb",
+                    "expiry_date": "2024-07-10",
+                    "network": "MTN",
+                    "filename": "🌎THE CRONIC MTN1G VODACOM 🌏.npv4",
+                },
+                {
+                    "name": "🤡MTNSA&Vod🇿🇦.npv4",
+                    "limit": "1024 mb",
+                    "expiry_date": "2024-07-19",
+                    "network": "VODACOM",
+                    "filename": "🤡MTNSA&Vod🇿🇦.npv4",
+                }
+
+            ]
+        }
+        ,
+        {
+        "name": "HTTP Injector",
+        "files": [
+        {
+        "name": "THE CRONIC MTN1G VOD.ehi",
+        "limit": "1 gb",
+			 "expiry_date": "2024-07-08",
+        "network": "MTN",
+        "filename": "THE CRONIC MTN1G VOD.ehi"
+        },
+        {
+        "name": "Vodacom[ 1-2]🇿🇦.ehi",
+        "limit": "1 gb",
+			 "expiry_date": "2024-06-29",
+        "network": "VODACOM",
+        "filename": "Vodacom1-2.ehi"
+        }
+        ,
+        {
+        "name": "🤡MTN&VODACOm🇿🇦.ehi",
+        "limit": "1 024 mb",
+			 "expiry_date": "2024-06-26",
+        "network": "MTN",
+        "filename": "MTN&VODACOM.ehi"
+        }
+        
+        
+
+        ]
         }
     ]
 };
