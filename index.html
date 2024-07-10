@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freenet 365 VPN Config Files | .hc | .hat | happy Surfing</title>
+    <meta name="description" content="Explore a wide range of  .hc | .ha | .ehi | .npv4 files and more"> 
+    <title>Freenet 365 | happy Surfing</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/theme.css">
     <link rel="stylesheet" href="./css/config.css">
-
+    
     <style>
         .homepage {
             display: flex;
@@ -32,6 +33,7 @@
             font-family: Arial, sans-serif;
             font-size: 1.1em;
             color: #333;
+
         }
 
         .box:hover {
@@ -97,6 +99,12 @@
             border-left: 5px solid #FFC107;
             padding-left: 10px;
         }
+        
+        .explore-btn{
+        padding: 10px;
+        border:2px solid green;
+        }
+
     </style>
 </head>
 <body>
@@ -125,50 +133,54 @@
 <div class="sidebar hide">
 
 <ul class="nav_list">
-  <a href="#home" id="homepage" hidden></a>
+
   <li onclick="handleNavClick('home')">
     <a>
-      <i class='bx bx-file'></i>
       <span class="links_name">HOME</span>
     </a>
-    <span class="tooltip">Home</span>
   </li>
 
   <li onclick="handleNavClick('configs')">
     <a>
-      <i class='bx bx-file'></i>
       <span class="links_name">CONFIGS</span>
     </a>
-    <span class="tooltip">Configs</span>
+
   </li>
 
+   <li onclick="handleNavClick('community')">
+  <a>
+    <span class="links_name">COMMUNITY</span>
+  </a>
+   </li>
   <li onclick="handleNavClick('settings')">
     <a>
-      <i class='bx bx-setting'></i>
       <span class="links_name">Settings</span>
     </a>
-    <span class="tooltip">Settings</span>
+
   </li>
 
   <li onclick="handleNavClick('about')">
     <a>
-      <i class='bx bx-profile'></i>
       <span class="links_name">ABOUT US</span>
     </a>
-    <span class="tooltip">See More About Us</span>
-  </li>
 
-  <span class="links_name tooltip">version 1.0</span>
+  </li>
+    <span class="links_name" id="on-fire"></span>
+  <span class="links_name">version 2.0</span>
+
 </ul>
 
 </div>
 
 <div id="files-auth" >
-  <div id="configs">
+  <div class="hidden" id="configs">
     <div class="tabs">
         <button class="tablinks" onclick="openTab(event, 'All-VPNS')" id="defaultOpen">All</button>
-        <button class="tablinks" onclick="openTab(event, 'Ha Tunnel')" >Ha Tunnel</button>
         <button class="tablinks" onclick="openTab(event, 'HTTP Custom')">HTTP Custom</button>
+        <button class="tablinks" onclick="openTab(event, 'Ha Tunnel')" >Ha Tunnel</button>  
+        <button class="tablinks" onclick="openTab(event, 'NPV Tunnel')" >NPV Tunnel</button>  
+        <button class="tablinks" onclick="openTab(event, 'HTTP Injector')" >HTTP Injector</button>  
+   <a href="download.html">    <button class="tablinks">Download All</button>  </a>
     </div>
 
     <div class="search-container">
@@ -179,24 +191,38 @@
         <button class="networklinks" onclick="openNetwork(event, 'All')" id="defaultNetworkOpen">All</button>
         <button class="networklinks" onclick="openNetwork(event, 'VODACOM')">VODACOM</button>
         <button class="networklinks" onclick="openNetwork(event, 'MTN')">MTN</button>
+        <button class="networklinks" onclick="openNetwork(event, 'TELKOM')">TELKOM</button>
     </div>
     
     <div id="files">
     
     </div>
     </div>
-    
+    <div class="hidden" id="community">
+   This page is under construction<br><b>It will be available soon</b>   
+    </div>
      <div class="hidden" id="home">
 
 <div class="homepage">
     <div class="box" >
-        <p>Explore our wide range of VPN files and find the perfect match for your needs. Secure your online presence today!</p>
+        <p>Explore our wide range of VPN files and find the perfect match for your needs. Secure your online presence today!
+     <br><br> 
+      <button class="explore-btn" onclick="handleNavClick('configs')">Start Surfing</button> 
+        </p>
     </div>
     <div class="box">
-        <p>Join our community and stay updated with the latest in VPN technology. Contribute, share feedback, and learn.</p>
+        <p>Join our community and stay updated with the latest in VPN technology. Contribute, share feedback, and learn.
+     <button class="explore-btn" onclick="handleNavClick('community')">Freenet Communinty</button> 
+        </p>
 
 </div>
+<div class="box">
+    <p>
+You can Now download many files at the same time In a zip File
+ <br><br><a href="download.html"><button class="explore-btn">Try It</button></a>
+    </p>
 
+</div>
 </div>
      </div>
      
@@ -210,10 +236,14 @@
       </div>
       </center>
                <h2></h2>
-      <button type="button" class="reset" onclick="resetColor()"><big>Reset Color</big></button>
-      <button type="button" class="cl" onclick="save()"><big>Save Color</big></button>       
+      <button type="button" class="reset-color-btn" onclick="resetColor()"><big>Reset Color</big></button>
+      <button type="button" class="save-color-btn" onclick="save()"><big>Save Color</big></button>       
    </center>
 </div>
+
+
+
+
 <div id="about" class="hidden">
 
 <div class="about-us">
@@ -221,7 +251,7 @@
     
     <p>Founded with a vision to simplify VPN accessibility,  serves as a trusted repository where users can find and download a diverse range of VPN files for various platforms and devices. Whether you're looking to enhance privacy, bypass geo-restrictions, or secure your data on public networks, our extensive library caters to diverse needs and preferences.</p>
     
-    <p>At <b>Freenet-365</b>,, we pride ourselves on offering not just a repository, but a community-driven platform where users can contribute, share feedback, and stay updated with the latest advancements in VPN technology. Our commitment to quality ensures that each file hosted undergoes rigorous testing and verification, guaranteeing reliability and performance.</p>
+    <p>At <b>Freenet-365</b>,we pride ourselves on offering not just a repository, but a community-driven platform where users can contribute, share feedback, and stay updated with the latest advancements in VPN technology. Our commitment to quality ensures that each file hosted undergoes rigorous testing and verification, guaranteeing reliability and performance.</p>
     
     <p>Join us <b onclick="handleNavClick('configs')"><u>Freenet-365</u></b>, and empower yourself with the tools needed to safeguard your digital footprint. Explore our collection today and experience the freedom and security that VPN technology can offer. Whether you're a casual user or a tech enthusiast, <b>Freenet-365</b> is your go-to source for all things VPN.</p>
 </div>
