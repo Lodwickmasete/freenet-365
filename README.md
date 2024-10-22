@@ -1,2 +1,2 @@
-# freenet-365.github.io
-Config website
+LIVE
+https://freenet-365.github.io
